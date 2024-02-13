@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/jquery-confirm.min.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="css/img/llave.png">
+    <script  type="text/javascript" src="js/jquery/jquery-1.10.2.js" charset="utf-8"></script>
+    <script  type="text/javascript" src="js/jquery/jquery-ui.min.js"  charset="utf-8"></script>
+
+    <script  type="text/javascript" src="js/jquery/jquery-confirm.min.js"></script>
+    <script type="text/javascript" src="js/eventos.js"  charset="utf-8"></script>
+		
+    <title>CREACIÓN DE CAMPAÑAS</title>
+</head>
+
+<body>
+    <header>
+            <div id="header">
+                <div class="navbar d-flex justify-content-between header_background">
+                    <img  src="css/img/logo.svg" width="140px" height="35" alt="logo"/>
+                    <div class=" d-flex justify-content-center align-items-center"  style="margin-left: 3.5rem;">
+                        <img src="css/img/club_fam.png" width="45px" style="margin-right: 10px;" alt="vial">
+                        <h1 class="header_text" id="nombreCampana">CAMPANA UNICA</h1>
+                    </div>
+                    <label id="FechaHora" class="timer"></label>
+                </div>
+            </div>
+    </header>
+
+
+
+    <div id= "divRecibirInfoCliente" class='alert alert-danger m-4 col-md-4' role='alert' style="display: none;">
+
+        <h4 class='alert-heading'>Error</h4>
+        <p>No se recibió información del cliente</p>
+
+    </div>
+
+
+    <div id = "divEncontroCliente" class='alert alert-danger m-4 col-md-4' role='alert' style="display: none;">
+
+    <h4 class='alert-heading'>Error</h4>
+        <p>No se encontró información del cliente: <label id = "numeroClienteNoEncontrado" style="color: red;">Marcador de posición</label> con teléfono: <label id = "numeroTelefonoNoEncontrado" style="color: red;">Marcador de posición</label></p>
+    </div>
+
+<section>
+            <div id="contenedor">
+	                <div id="contConfiguracion">
+	                    <div>
+
+                        <div class="card m-4 border sombra_card_gnrl">
+
+                            <div class="card-header" style="text-align: center;">
+                               
+                            <ul class="nav nav-tabs card-header-tabs">
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" >
+                                        Información confidencial del cliente
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" >Teléfono: 
+                                        <label id = "answernumberformatted">ERROR</label>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Ejecutiv@:
+                                    <img src="css/img/help-operator.png" style="width: 18px; height: 18px;" alt="ejecutivo">
+                                        <label id = "username">ERROR</label>
+                                    </a>
+                                </li>
+
+                            </ul>
+                                                 
+                            </div>
+                            
+                                <table style="width: 100%; table-layout: fixed;">
+                                
+	                               	<tr>
+	                               		<td colspan="3" style="width: 35%;">
+
+                                            <div class="card mt-4 mr-4 ml-4 align-center table-wrapper-scroll-y my-custom-scrollbar shadow-class">
+                                                <div class="card-header text-center ">
+                                                    <h5>Información del cliente</h5>
+                                                </div>
+                                               
+                                                <table class="table  table-sm table-hover" >
+                                                    <thead style="text-align: center  !important;">
+
+                                                        <tr>
+                                                            <th scope="col">Descripción</th>
+                                                            <th scope="col">Datos del cliente</th>
+                                                        </tr>
+
+                                                    </thead>
+
+                                                    <tbody id="borde-l">
+    
+                                                        <tr>
+                                                            <th>No. cliente</th>
+                                                            <td id="numerocliente" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Fecha del servicio</th>
+                                                            <td id="fechadeservicio" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Nombre</th>
+                                                            <td id="nombre_cliente" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Apellido paterno</th>
+                                                            <td id="apellidopaterno" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Apellido materno</th>
+                                                            <td id="apellidomaterno" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Servicio</th>
+                                                            <td id="servicio_cliente" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Estado</th>
+                                                            <td id="estado_cliente" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Ciudad</th>
+                                                            <td id="ciudad_cliente" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tel. particular</th>
+                                                            <td id="telefono_particular" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tel. celular</th>
+                                                            <td id="telefono_celular" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Correo</th>
+                                                            <td id="correoelectronico" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tipo de plan</th>
+                                                            <td id="tipodeplan" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Num. de serv. utilizados</th>
+                                                            <td id="numserviciosutilizados" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tipo de solución</th>
+                                                            <td id="tipodesolucion" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Proveedor</th>
+                                                            <td id="provedor" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Fecha de adquisición del club</th>
+                                                            <td id="fechaadquisiciondelclub" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Importe ofrecido</th>
+                                                            <td id="importeofrecido" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Duración de la llamada</th>
+                                                            <td id="tiempoduracionllamada" class="hover-t"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Días de experiencia</th>
+                                                            <td id="diasexperiencia" class="hover-t"> </td>
+                                                        </tr>
+                                              
+                                                        
+                                                    </tbody>
+
+                                                </table>
+
+			                                	
+                                            </div>
+		                                </td>
+
+	                               		<td valign="top"> 
+
+                                            <div class="card mr-3 mt-4 border shadow-class">
+
+                                                <div class="card-header alineado">
+                                                <img src="css/img/icons8-encuesta.png" style="width: 30px; height: 30px; margin: 5px;" alt="encuesta">
+                                                    <h5 class="row align-items-center alineado">Encuesta</h5>
+                                                </div>
+				                             	<div id="divLlenaEncuesta"></div>
+				                             	<table  id="tblEncuesta" align="left" class="ui-widget" >
+				                             		<tr >
+				                             			<td style="padding: 15px; " class="marcoColumnas" align = "center">Pregunta:</td>
+				                             			<td style="padding: 30px; width: 100%; color:black; " class="marcoColumnas"  align = "left">
+				                             				
+                                                         <label id="txtPreguntaDes"></label>
+
+				                             			</td>
+														
+				                             		</tr>
+				                             		<tr>
+				                             			<td  class="marcoColumnas" align = "center">Respuesta:</td>
+				                             			<td  class="marcoColumnas" >
+
+                                                         <div class="col col-lg-4">
+					                             			<select id="cbRespuestas" class="form-control" name="cbrespuestas" aria-label="respuestas">
+					                             				<option>Seleccione respuesta</option>
+					                             			</select>
+
+                                                        </div>
+
+                                                        <input  id="txtOtro" style="display:none; margin-top: 10px; width: 70%;height:45px; resize:none;" 
+                                                               type="text" autocomplete="off" onKeyUp="this.value=this.value.toUpperCase();" placeholder="Especifique..."
+                                                               ondragstart="return false" ondrop="return false">
+
+				                             			</td>
+				                             		</tr>
+				                             		<tr >
+				                             			<td class="btnContenedor" colspan="2" >
+
+                                                            <button id="btnAnterior" type="button" class="btn btn-lg boton_color m-3" style="margin-right: 15px;">
+                                                                <img src="css/img/chevron_izquierda.png" style="width: 30px;" alt="izquierda"> Anterior    
+                                                            </button>
+
+                                                            <button id="btnSiguiente" type="button" class="btn btn-lg boton_color">Siguiente
+                                                                <img src="css/img/chevron_derecha.png" style="width: 30px;" alt="derecha">
+                                                            </button>
+
+                                                            <button id="btnFinGestion" type="button" class="btn btn-lg boton_fin" disabled>Finalizar llamada
+                                                                <img src="css/img/icons8-fin_llamada.png" style="width: 35px; margin-left: 3px;" alt="finalizar" >
+                                                            </button>
+				                             																	
+														</td>
+				                             			
+				                             		</tr>
+				                             	</table>
+                                            </div>
+			                                <br>
+
+                                            <div class="card mr-3  border shadow-class ">
+                                                <div class="card-header alineado">
+                                                <img src="css/img/icons8-busqueda.png" style="width: 30px; height: 30px; margin: 5px;" alt="observaciones">
+                                                    <h5 class="row align-items-center alineado" onkeypress="return caracteres_especiales(e)">Observaciones</h5>
+                                                </div>
+
+                                                <textarea 
+                                                    id="txtObservaciones" 
+                                                    class="txtObservaciones" 
+                                                    placeholder="Observaciones de la llamada..."
+                                                    maxlength="249" 
+                                                    onKeyUp="this.value=this.value.toUpperCase();"
+                                                    ondragstart="return false" ondrop="return false"></textarea>
+                                            </div>
+	                               		</td>
+	                               	</tr>
+                                </table>  
+	                        </div>
+                        </div>
+	                </div>
+
+
+            </div>
+        </section>
+
+<footer class="footer">
+    <span id="copyright" class="copyright">
+        <script>
+            document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+        </script>
+    </span> 
+        &copy; Coppel todos los derechos reservados v1.2.0
+</footer>  
+
+<input type="hidden" id ="clienteid" value="">
+<input type="hidden" id ="cliente" value="">
+
+<input type="hidden" id ="hora_inicio" value="1900-01-01 00:00:00">
+<input type="hidden" id ="id_llamada" value="">
+<input type="hidden" id ="empleado_registro" value="">
+<input type="hidden" id ="telefono_contacto" value="">
+
+</body>

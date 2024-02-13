@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "ReadexPro";
+    src: url("./fonts/ReadexPro/ReadexPro-Medium.ttf");
+  }
+  @media (min-width: 990px){
+    #cbRespuestas {
+      min-width: 280px;
+    }
+  }
+.header_text
+{
+    font-family: 'ReadexPro';
+    margin-top: .2rem;
+    font-size: 26px;
+    text-align: center;
+    color: #FFF;;
+}
+img{
+  -webkit-user-drag: none;
+}
+
+.hover-t:hover{
+  text-shadow: 0 0 1px black;
+  
+}
+
+.header_background{ 
+
+  background: #238DC1;
+}
+.alineado{
+    display: flex !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#borde-l tr td {
+  border-left: 2px solid #e3e3e3; 
+  padding-left: 3%;
+}
+tr{
+  font-size: large;
+}
+#borde-l tr th {
+  padding-left: 3%;
+}
+
+.shadow-class{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: auto;
+}
+.sombra_card_gnrl{
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+body{
+    background: url(img/gplaypattern.png) repeat;
+}
+.timer{
+    width: 230px;
+    font-family: 'ReadexPro';
+    font-size: 18px;
+    text-align: center;
+    color: #FFF;;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    overflow: auto;
+    margin-bottom: 1.8rem;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+
+.btnContenedor{
+    text-align: center;
+}
+
+.boton_color{
+  background-color: #238DC1 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  width: 180px;
+}
+.boton_fin{
+  background-color: #238DC1 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  width: 230px;
+}
+#btnFinGestion{
+    display: none;
+    margin: 10px 0 10px 0;
+}
+
+.marcoColumnas{
+    border:1px #e3e3e3 solid;
+    width:auto;
+    padding: 5px;
+    font-weight: bold;
+
+  }
+
+.txtObservaciones{
+
+    height:150px;
+    padding: .8rem;
+    resize:none;
+    text-transform: uppercase;
+    align-items: center;
+    border:1px #e3e3e3 solid ;
+
+  }
+  textarea:focus{ 
+    outline:none;
+    border-color:#9BC5D6;
+    box-shadow:0 0 3px #9BC5D6;
+  }
+
+
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'ReadexPro';
+    font-size: 14px;
+    color: #FFF;
+    background: #238DC1;
+
+  }
+
+  body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+
+  
